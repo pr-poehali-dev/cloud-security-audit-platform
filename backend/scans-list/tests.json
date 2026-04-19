@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Get scans list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"scans": [], "total": 0},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
