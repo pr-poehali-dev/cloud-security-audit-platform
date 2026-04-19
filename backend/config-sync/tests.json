@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "GET without token — forbidden",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 403,
+      "expectedBody": {"error": "Forbidden"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST without token — forbidden",
+      "method": "POST",
+      "path": "/",
+      "body": {"service_name": "test"},
+      "expectedStatus": 403,
+      "expectedBody": {"error": "Forbidden"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
